@@ -34,15 +34,15 @@ try:
         print 'HTTP request received:'
         print recvSocket.recv(1024)
         
-        num_aleatorio = random.randint(11111,99999)
+        num_aleatorio = random.randint(11111, 99999)
 
         html = '<html><body><a href="http://localhost:8080/'
-        html+= str(num_aleatorio)
-        html+= '">Dame otra</a></body></html>'
+        html += str(num_aleatorio)
+        html += '">Dame otra</a></body></html>'
 
         respuesta = 'HTTP/1.1 200 OK\r\n\r\n'
-        respuesta+= html
-        respuesta+= '\r\n'
+        respuesta += html
+        respuesta += '\r\n'
         
         recvSocket.send(respuesta)
         recvSocket.close()
